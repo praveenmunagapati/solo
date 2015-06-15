@@ -16,13 +16,15 @@ Oh, and I also like to write press-releases in what I call "Oprah-speak" for mai
 Once the project moves into development, the press release can be used as a touchstone; a guiding light. The product team can ask themselves, "Are we building what is in the press release?" If they find they're spending time building things that aren't in the press release (overbuilding), they need to ask themselves why. This keeps product development focused on achieving the customer benefits and not building extraneous stuff that takes longer to build, takes resources to maintain, and doesn't provide real customer benefit (at least not enough to warrant inclusion in the press release).
  -->
  
-## HCR-328 ##
+# HCR-328 #
+
+## What is HCR-328? ##
 HCR-328 is an AI that is capable of simulating a human conversation. Simply by typing a question or statement to him he will ponder it and respond accordingly.
 
 ## Problem ##
 The problem of creating an AI that can closely simulate human interaction is a challenging one, the way we currently implement this is by leveraging statistical analysis on thousands of actual conversations.
 
-## Summary ##
+## Solution ##
 Rather then try to build your own AI, you can leverage HCR-328 in a simple manner.
 
 ## Bob Dole ##
