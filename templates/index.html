@@ -1,7 +1,15 @@
 {% extends "base.html" %}
 
 {% block content %}
-<form action='/chat' method='post'>
-  <input type='text' name='query' />
+<script type='text/javascript'>
+  $SCRIPT_ROOT = {{ request.script_root|tojson|safe }};
+</script>
+
+<form action='/chat' method='post' class='cleverbot' name='query'>
+  <input type='text' name='query' class='query' />
 </form>
+
+<div class='chats'>
+  
+</div>
 {% endblock %}
