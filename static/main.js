@@ -1,20 +1,20 @@
-$('.cleverbotForm').on('submit', function(e){
+var $form = $('.cleverbotForm');
+var $input = $('.query');
+
+$form.on('submit', function(e){
   e.preventDefault();
-  // var query = $(this).serialize();
-  // console.log(query);
   askQuestion();
+  console.log($form.serialize());
 
   function askQuestion() {
     // Query paramater must be a string
     $.ajax({
       type: 'POST',
       url: $SCRIPT_ROOT + 'chat',
-      // data: JSON.stringify({question: query}),
-      data: $('form').serialize(),
-      // contentType: 'application/json;charset=UTF-8',
-      // dataType: 'json',
+      data: $form.serialize(),
       success: function(result){
-        console.log(result);
+        var result = JSON.parse(result);
+        console.log(result.message)
       },
       fail: function(error) {
         console.log(error);
