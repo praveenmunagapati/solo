@@ -37,8 +37,8 @@ $(function(){
     msg.text = text;
     var voices = window.speechSynthesis.getVoices();
     msg.voice = voices[$(voiceSelect).val()];
-    msg.volume = 1.0;
-    msg.pitch = 1.0;
+    msg.volume = parseFloat( $(volume).val() );
+    msg.pitch = parseFloat( $(pitch).val() );
     msg.rate = 1.0;
 
     window.speechSynthesis.speak(msg);
