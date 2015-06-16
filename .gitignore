@@ -3,3 +3,4 @@ static/public/
 config.py
 *.pyc
 test.*
+node_modules/
