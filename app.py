@@ -16,28 +16,12 @@ def index():
 # @csrf.exempt
 @app.route('/chat', methods=["POST"])
 def cleverbot():
-  # try:
-    question = str(request.form['query'])
-    answer = cleverbot_client.ask(question)
-    answers.append(answer)
-    print(question)
-    print(answer)
-    return json.dumps({'status': 'OK', 'message': answer})
-  # except:
-    # return 'Failure'
-
-  # question = request.args.get('query', type=str)
-  # question = request.form['query'];
-  # answer = cleverbot_client.ask(question);
-  # answers.append(answer)
-  # print(question)
-  # print(answer)
-  # return jsonify(message=answer)
-  # return jsonify(message=str(answer))
-  # data = {"message": request.args.get('query')}
-  # print request.args.get('query')
-  # return jsonify(data)
-  # return request.args.get('query')
+  question = str(request.form['query'])
+  answer = cleverbot_client.ask(question)
+  answers.append(answer)
+  print(question)
+  print(answer)
+  return json.dumps({'status': 'OK', 'message': answer})
 
 
 if __name__ == '__main__':

@@ -63,11 +63,11 @@ $(function(){
       complete: function(response) {
         var message = JSON.parse(response.responseText).message;
         speak(message);
-        window.speechSynthesis.speak(new SpeechSynthesisUtterance({
-          text: message,
-          rate: 1.0,
-          voice: 'en-US'
-        }));
+        // window.speechSynthesis.speak(new SpeechSynthesisUtterance({
+        //   text: message,
+        //   rate: 1.0,
+        //   voice: 'en-US'
+        // }));
       },
       error: function(error) {
         alert(error);
@@ -89,12 +89,12 @@ $(function(){
   init();
 
 });
-  window.setInterval(function(){
-    var msg = new SpeechSynthesisUtterance('hello');
-    msg.text='dicks';
-    msg.volume=1.0;
-    msg.lang='en-US';
-    msg.rate=1.0;
-    msg.pitch=1.0;
-    window.speechSynthesis.speak(msg);
-  }, 500)
+  // window.setInterval(function(){
+  //   var msg = new SpeechSynthesisUtterance('hello');
+  //   msg.text='dicks';
+  //   msg.volume=1.0;
+  //   msg.lang='en-US';
+  //   msg.rate=1.0;
+  //   msg.pitch=1.0;
+  //   window.speechSynthesis.speak(msg);
+  // }, 500)
