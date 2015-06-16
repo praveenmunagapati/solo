@@ -2,4 +2,4 @@ venv/
 static/public/
 config.py
 *.pyc
-test.py
+test.*
