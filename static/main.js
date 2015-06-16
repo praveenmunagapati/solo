@@ -8,20 +8,20 @@ $(function(){
 
   var $form = $('.cleverbotForm');
   var $input = $('.query');
-
+  var $thinking = $('.thinking');
 
   var loadVoices = function() {
     window.speechSynthesis.onvoiceschanged = function() {
       var voices = window.speechSynthesis.getVoices();
       voices.forEach(function(voice, i) {
         var option = document.createElement('option');
-        option.value = voice.name;
+        option.value = i;
         option.innerHTML = voice.name;        
         voiceSelect.appendChild(option);
       });
     };
   };
-  
+
   var checkCompatibility = function() {
     if ('speechSynthesis' in window) {
       supportMsg.innerHTML = 'Your browser <strong>supports</strong> speech synthesis.';
@@ -34,23 +34,17 @@ $(function(){
   var speak = function(text) {
     var msg = new SpeechSynthesisUtterance();
     msg.text = text;
+    var voices = window.speechSynthesis.getVoices();
+    msg.voice = voices[$(voiceSelect).val()];
+    msg.pitch = 1.0;
     msg.rate = 1.0;
-
-    // msg.volume = parseFloat(volume.value);
-    // msg.rate = parseFloat(rate.value);
-    // msg.pitch = parseFloat(pitch.value);
-
-    // if (voiceSelect.value) {
-    //   msg.voice = speechSynthesis.getVoices().filter(function(voice) { 
-    //     return voice.name == voiceSelect.value; 
-    //   })[0];
-    // }
-    msg.voice = 'en-US';
+    msg.volume = 1.0;
 
     window.speechSynthesis.speak(msg);
-  }
+  };
 
   var askQuestion = function() {
+    thinkingShow();
     $.ajax({
       type: 'POST',
       url: $SCRIPT_ROOT + 'chat',
@@ -63,16 +57,18 @@ $(function(){
       complete: function(response) {
         var message = JSON.parse(response.responseText).message;
         speak(message);
-        // window.speechSynthesis.speak(new SpeechSynthesisUtterance({
-        //   text: message,
-        //   rate: 1.0,
-        //   voice: 'en-US'
-        // }));
+        thinkingHide();
       },
       error: function(error) {
         alert(error);
       }
     });
+  };
+  var thinkingShow = function(){
+    $thinking.show();
+  };
+  var thinkingHide = function(){
+    $thinking.hide();
   };
 
   $form.on('submit', function(e){
@@ -81,7 +77,6 @@ $(function(){
     $input.val('');
   });
 
-
   var init = function() {
     checkCompatibility();
     loadVoices();
@@ -89,12 +84,3 @@ $(function(){
   init();
 
 });
-  // window.setInterval(function(){
-  //   var msg = new SpeechSynthesisUtterance('hello');
-  //   msg.text='dicks';
-  //   msg.volume=1.0;
-  //   msg.lang='en-US';
-  //   msg.rate=1.0;
-  //   msg.pitch=1.0;
-  //   window.speechSynthesis.speak(msg);
-  // }, 500)

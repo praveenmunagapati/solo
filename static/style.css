@@ -1,6 +1,9 @@
 html, body {
   overflow-x: hidden; 
 }
+.thinking {
+  display: none;
+}
 #supportMessage {
   text-align: center;
 }
@@ -30,6 +33,7 @@ html, body {
 }
 .navbar-right span{
   cursor: default;
+  color: grey;
 }
 .navbar-right li {
   font-size: 15px;
