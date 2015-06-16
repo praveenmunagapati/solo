@@ -14,16 +14,16 @@ Oh, and I also like to write press-releases in what I call "Oprah-speak" for mai
 Once the project moves into development, the press release can be used as a touchstone; a guiding light. The product team can ask themselves, "Are we building what is in the press release?" If they find they're spending time building things that aren't in the press release (overbuilding), they need to ask themselves why. This keeps product development focused on achieving the customer benefits and not building extraneous stuff that takes longer to build, takes resources to maintain, and doesn't provide real customer benefit (at least not enough to warrant inclusion in the press release).
  -->
  
-# HCR-328 #
+# Sharpbot - https://infinite-brook-7019.herokuapp.com/#
 
-## What is HCR-328? ##
-HCR-328 is an AI that is capable of simulating a human conversation. Simply by typing a question or statement to him he will ponder it and respond accordingly.
+## What is Sharpbot? ##
+Sharpbot is an AI that is capable of simulating a human conversation. Simply by typing a question or statement to him he will ponder it and respond accordingly.
 
 ## Problem ##
 The problem of creating an AI that can closely simulate human interaction is a challenging one, the way we currently implement this is by leveraging statistical analysis on thousands of actual conversations.
 
 ## Solution ##
-Rather then try to build your own AI, you can leverage HCR-328 in a simple manner.
+Rather then try to build your own AI, you can leverage Sharpbot in a simple manner.
 
 ## Bob Dole ##
 Don't take our word on it, let's hear from our esteemed co-founder Bob Dole.
@@ -35,7 +35,7 @@ Just go to the website and start typing.
 ## Customer Feedback ##
 >"The next big thing." - Jim Carey
 >"Bigger then facebook for cats." - Joe Swanson
->"I was on the edge until I found this product, HCR-328 saved my life." - Abe Lincoln
+>"I was on the edge until I found this product, Sharpbot saved my life." - Abe Lincoln
 
 ## Closing and Call to Action ##
 Just do it.
