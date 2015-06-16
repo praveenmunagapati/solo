@@ -9,10 +9,20 @@ html, body {
 }
 .cleverbotForm {
   margin-top: 20px;
+  width: 100%;
 }
-.cleverbotForm button {
+.query {
+  width: 85%;
+  display: inline-block;
+}
+.send {
   width: 140px;
   margin-top: 10px;
+}
+.speech-input {
+  display: inline-block;
+  width: 60px;
+  text-align: center;
 }
 .options {
   margin: 0 auto;

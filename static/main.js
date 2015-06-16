@@ -43,17 +43,12 @@ $(function(){
     window.speechSynthesis.speak(msg);
   };
 
-  var askQuestion = function() {
+  var askQuestion = function(question) {
     thinkingShow();
     $.ajax({
       type: 'POST',
       url: $SCRIPT_ROOT + 'chat',
-      data: $form.serialize(),
-      success: function(result){
-        var result = JSON.parse(result);
-        console.log(result.message);
-        // speak(result.message.toString());
-      },
+      data: question || $form.serialize(),
       complete: function(response) {
         var message = JSON.parse(response.responseText).message;
         speak(message);
@@ -64,6 +59,7 @@ $(function(){
       }
     });
   };
+
   var thinkingShow = function(){
     $thinking.show();
   };
@@ -77,10 +73,22 @@ $(function(){
     $input.val('');
   });
 
+  $('.speech-input').on('click', function(e){
+    e.preventDefault();
+    var message;
+    var recognition = new webkitSpeechRecognition();
+    recognition.start();
+    recognition.onresult = function(e) {
+      console.log(e.results[0][0].transcript);
+      message = e.results[0][0].transcript;
+      askQuestion('query='+message);
+    };
+  });
+
   var init = function() {
     checkCompatibility();
     loadVoices();
   };
   init();
-
+  
 });
