@@ -9,6 +9,7 @@ $(function(){
   var $form = $('.cleverbotForm');
   var $input = $('.query');
   var $thinking = $('.thinking');
+  var $speechInput = $('.speech-input');
 
   var loadVoices = function() {
     window.speechSynthesis.onvoiceschanged = function() {
@@ -73,7 +74,7 @@ $(function(){
     $input.val('');
   });
 
-  $('.speech-input').on('click', function(e){
+  $speechInput.on('click', function(e){
     e.preventDefault();
     var message;
     var recognition = new webkitSpeechRecognition();
@@ -90,5 +91,5 @@ $(function(){
     loadVoices();
   };
   init();
-  
+
 });
