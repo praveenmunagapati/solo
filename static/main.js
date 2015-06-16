@@ -36,9 +36,9 @@ $(function(){
     msg.text = text;
     var voices = window.speechSynthesis.getVoices();
     msg.voice = voices[$(voiceSelect).val()];
+    msg.volume = 1.0;
     msg.pitch = 1.0;
     msg.rate = 1.0;
-    msg.volume = 1.0;
 
     window.speechSynthesis.speak(msg);
   };
